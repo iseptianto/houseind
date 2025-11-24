@@ -1,0 +1,13 @@
+[Unit]
+Description=House Price Prediction API
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/housebaru
+ExecStart=/home/ubuntu/housebaru/venv/bin/uvicorn src.api.main:app --host 0.0.0.0 --port 8000
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
